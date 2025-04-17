@@ -1,0 +1,137 @@
+.swiper-section{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.swiper-section-name{
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.swiper-section-title{
+    font-size: 2.625rem;
+    font-weight: 700;
+    margin-bottom: 2.62rem;
+}
+
+.swiper {
+    width: 100%;
+    position: relative;
+    height: auto;
+}
+
+.swiper-wrapper {
+    display: flex;
+}
+
+.swiper-slide {
+    position: relative;
+}
+
+.slide-container{
+    margin-bottom: 1.5rem;
+    height: 27.5rem;
+}
+
+.slide-label{
+    font-size: 1rem;
+    text-transform: uppercase;
+    border-radius: 62.5rem;
+    padding: 0.25rem 0.75rem;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+}
+
+.label-0{
+    background: var(--limited-color);
+}
+
+.label-1{
+    background: var(--bestseller-color);
+}
+
+.swiper-slide svg{
+    position: absolute;
+    top: 0.69rem;
+    right: 1rem;
+    cursor: pointer;
+    margin: 0.31rem;
+}
+
+.swiper-slide img{
+    max-height: 22.75rem;
+    object-fit: contain;
+}
+
+.product-title{
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 120%;
+}
+
+.product-price{
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-top: 0.75rem;
+}
+
+.swiper-button-prev, .swiper-button-next{
+    width: 4.5rem;
+    height: 4.5rem;
+    border: var(--primary-gray);
+    background: var(--primary-white);
+    border-radius: 62.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.swiper-button-prev:hover, .swiper-button-next:hover{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.swiper-button-prev:hover svg, .swiper-button-next:hover svg{
+    transform: scale(1.1);
+}
+
+.swiper-button-prev{
+    left: 2rem;
+}
+
+.swiper-button-next{
+    right: 2rem;
+}
+
+.swiper-button-prev svg{
+    transform: rotate(180deg);
+}
+
+.swiper-button-prev:hover svg{
+    transform: scale(1.1) rotate(180deg);
+}
+
+.swiper-button-prev.hidden,
+.swiper-button-next.hidden {
+    display: none;
+}
+
+.swiper-progress{
+    background-color: var(--primary-gray);
+    height: 0.0625rem;
+    width: 100%;
+    margin-top: 4rem;
+}
+
+.swiper-progress-bar{
+    background-color: var(--primary-black);
+    height: 100%;
+    transition: all 0.3s ease;
+}

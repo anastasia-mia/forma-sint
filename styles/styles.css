@@ -1,0 +1,42 @@
+html{
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+.container{
+    max-width: 114.75rem;
+    margin: 0 auto;
+    padding: 0 2.62rem;
+    overflow: hidden;
+}
+
+h1{
+    font-size: 6.35rem;
+}
+
+main{
+    display: flex;
+    padding: 9.06rem 0;
+    flex-direction: column;
+    gap: 6rem;
+    overflow: hidden;
+}
+
+.greeting img{
+    max-width: 100%;
+    border-radius: 0.375rem;
+    object-fit: contain;
+}
+
+.product-card{
+    background: var(--primary-gray);
+    border-radius: 0.375rem;
+    cursor: pointer;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.product-card:hover{
+    transform: scale(1.02);
+    box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;
+}

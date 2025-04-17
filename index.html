@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore new sportswear for your adventures!">
+    <title>FormaSint</title>
+    <link rel="icon" type="image/png" href="assets/FORMA-ICON.png" />
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/variables.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/swiper.css">
+    <link rel="stylesheet" href="styles/catalog.css">
+    <link rel="stylesheet" href="styles/modal.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script
+            src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+            defer
+    ></script>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="header-container container">
+                <div class="logo">
+                    <img src="assets/FORMA-ICON.png" alt="Forma Sint Logo" aria-hidden="true">
+                    <p class="logo-text">Forma’sint.</p>
+                    <p class="company">idomods &lt;/&gt;</p>
+                </div>
+                <nav class="navbar" aria-label="Main navigation">
+                    <ul>
+                        <li><a href="/" aria-current="page">Home</a></li>
+                        <li><a href="#swiper-section">Featured products</a></li>
+                        <li><a href="#catalog-section">Product Listing</a></li>
+                    </ul>
+                </nav>
+                <div class="user">
+                    <svg width="24" height="24" aria-hidden="true">
+                        <use href="assets/sprite.svg#user"></use>
+                    </svg>
+                    <p>Frontend developer</p>
+                </div>
+            </div>
+        </header>
+        <div class="container">
+            <main>
+                <section class="greeting">
+                    <h1>Forma'Sint</h1>
+                    <img src="assets/HERO-PHOTO.jpg" alt="Person on the iceberg">
+                </section>
+                <section class="swiper-section" id="swiper-section">
+                    <p class="swiper-section-name">Featured products</p>
+                    <h2 class="swiper-section-title">Browse featured</h2>
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                        </div>
+                        <div class="swiper-button-prev">
+                            <svg width="24" height="24">
+                                <use href="assets/sprite.svg#arrow-right"></use>
+                            </svg>
+                        </div>
+                        <div class="swiper-button-next">
+                            <svg width="24" height="24">
+                                <use href="assets/sprite.svg#arrow-right"></use>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="swiper-progress">
+                        <div class="swiper-progress-bar"></div>
+                    </div>
+                </section>
+                <section class="catalog" id="catalog-section">
+                    <div class="catalog-options">
+                        <p>Numbers of products per page</p>
+                        <div class="catalog-select">
+                            <select name="select" id="page-select" aria-label="Products per page">
+                                <option value="14">14</option>
+                                <option value="26">26</option>
+                                <option value="38">38</option>
+                            </select>
+                            <svg class="custom-arrow" width="24" height="24">
+                                <use href="assets/sprite.svg#arrow-down"></use>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="catalog-body">
+                        <div class="loader"></div>
+                    </div>
+                    <div class="catalog-bottom"></div>
+                </section>
+            </main>
+        </div>
+        <footer></footer>
+    </div>
+
+    <template id="slide-template">
+        <div class="swiper-slide"  itemscope itemtype="https://schema.org/Product">
+            <div class="slide-container product-card">
+                <span class="slide-label"></span>
+                <img src="" alt="Product" loading="lazy" itemprop="image">
+                <svg width="24" height="24">
+                    <use href="assets/sprite.svg#heart"></use>
+                </svg>
+            </div>
+            <p class="product-title" itemprop="name"></p>
+            <p class="product-price" itemprop="price">€300,00 EUR</p>
+        </div>
+    </template>
+
+    <template id="product-template">
+        <div class="product product-card"  itemscope itemtype="https://schema.org/Product">
+            <img class="product-image" src="" alt="Product" loading="lazy" itemprop="image">
+            <p class="product-id" itemprop="sku"></p>
+        </div>
+    </template>
+
+    <div class="modal" role="dialog" aria-modal="true">
+        <div class="modal-background"></div>
+        <div class="modal-window">
+            <div class="modal-top">
+                <p class="modal-product-id product-id"></p>
+                <div class="modal-close" role="button" aria-label="Close modal">
+                    <svg width="24" height="24" aria-hidden="true">
+                        <use href="assets/sprite.svg#cross"></use>
+                    </svg>
+                    <p>Close</p>
+                </div>
+            </div>
+            <div class="modal-image-container">
+                <img class="modal-image" src="" alt="Product"/>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/modal.js" type="module"></script>
+    <script src="js/swiper.js" type="module"></script>
+    <script src="js/catalog.js" type="module"></script>
+</body>
+</html>
