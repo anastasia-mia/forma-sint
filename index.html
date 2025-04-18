@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Explore new sportswear for your adventures!">
     <title>FormaSint</title>
-    <link rel="icon" type="image/png" href="assets/FORMA-ICON.png" />
+    <link rel="icon" type="image/png" href="assets/logo-light.svg" />
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/variables.css">
     <link rel="stylesheet" href="styles/styles.css">
@@ -23,14 +23,14 @@
     <div class="wrapper">
         <header class="header">
             <div class="header-container container">
-                <div class="logo">
-                    <img src="assets/FORMA-ICON.png" alt="Forma Sint Logo" aria-hidden="true">
+                <a href="./" class="logo">
+                    <img src="assets/logo-light.svg" alt="FormaSint Logo">
                     <p class="logo-text">Forma’sint.</p>
                     <p class="company">idomods &lt;/&gt;</p>
-                </div>
+                </a>
                 <nav class="navbar" aria-label="Main navigation">
                     <ul>
-                        <li><a href="/" aria-current="page">Home</a></li>
+                        <li><a href="./" aria-current="page">Home</a></li>
                         <li><a href="#swiper-section">Featured products</a></li>
                         <li><a href="#catalog-section">Product Listing</a></li>
                     </ul>
@@ -41,13 +41,21 @@
                     </svg>
                     <p>Frontend developer</p>
                 </div>
+                <div class="burger-menu-open" role="button" aria-label="Open cart">
+                    <svg width="24" height="24" aria-hidden="true">
+                        <use href="assets/sprite.svg#burger-menu"></use>
+                    </svg>
+                    <span>Menu</span>
+                </div>
             </div>
         </header>
         <div class="container">
             <main>
                 <section class="greeting">
                     <h1>Forma'Sint</h1>
-                    <img src="assets/HERO-PHOTO.jpg" alt="Person on the iceberg">
+                    <div class="greeting-image">
+                        <img src="assets/HERO-PHOTO.jpg" alt="Person on the iceberg">
+                    </div>
                 </section>
                 <section class="swiper-section" id="swiper-section">
                     <p class="swiper-section-name">Featured products</p>
@@ -85,13 +93,35 @@
                         </div>
                     </div>
                     <div class="catalog-body">
-                        <div class="loader"></div>
                     </div>
+                    <div class="loader"></div>
                     <div class="catalog-bottom"></div>
                 </section>
             </main>
         </div>
-        <footer></footer>
+        <footer><p>&copy; 2025 FormaSint</p></footer>
+    </div>
+
+    <div class="burger-menu">
+        <div class="burger-background modal-background"></div>
+        <div class="burger-menu-window">
+            <div class="burger-menu-top">
+                <img src="assets/logo-light.svg" alt="Forma Sint Logo" aria-hidden="true" />
+                <div class="burger-menu-close" role="button" aria-label="Close modal">
+                    <svg width="24" height="24" aria-hidden="true">
+                        <use href="assets/sprite.svg#cross"></use>
+                    </svg>
+                    <p>Close</p>
+                </div>
+            </div>
+            <nav class="burger-menu-nav" aria-label="Burger menu navigation">
+                <ul>
+                    <li><a href="./">Home</a></li>
+                    <li><a href="#swiper-section">Featured products</a></li>
+                    <li><a href="#catalog-section">Product Listing</a></li>
+                </ul>
+            </nav>
+        </div>
     </div>
 
     <template id="slide-template">
@@ -133,6 +163,7 @@
         </div>
     </div>
 
+    <script src="js/index.js" type="module"></script>
     <script src="js/modal.js" type="module"></script>
     <script src="js/swiper.js" type="module"></script>
     <script src="js/catalog.js" type="module"></script>

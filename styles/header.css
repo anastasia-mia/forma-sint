@@ -15,17 +15,23 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 0.93rem;
 }
 
 .logo{
     display: flex;
     align-items: center;
     gap: 0.75rem;
+    cursor: pointer;
 }
 
 .logo img{
     width: 1.62rem;
     height: 1.62rem;
+}
+
+.logo:hover img{
+    content: url('../assets/logo-dark.svg');
 }
 
 .logo-text{
@@ -36,6 +42,7 @@
     text-transform: uppercase;
     justify-self: center;
     width: auto;
+    white-space: nowrap;
 }
 
 .navbar ul{
@@ -43,7 +50,6 @@
     align-items: center;
     justify-content: center;
     gap: 2.62rem;
-    text-align: center;
 }
 
 .navbar ul li{
@@ -57,7 +63,7 @@
     color: var(--primary-black);
 }
 
-.navbar ul li:hover::after{
+.navbar ul li:hover::after, .burger-menu li:hover::after{
     content: '';
     position: absolute;
     height: 1px;
@@ -77,4 +83,120 @@
 
 .user p{
     text-transform: uppercase;
+}
+
+.burger-menu-open{
+    display: none;
+}
+
+.burger-menu{
+    display: none;
+}
+
+@media screen and (max-width: 1024px){
+    .company{
+        display: none;
+    }
+
+    .navbar ul{
+        gap: 1.5rem;
+    }
+
+    .navbar li{
+        text-align: center;
+    }
+
+    .navbar li, .user p{
+        width: min-content;
+    }
+
+    .user{
+        gap: 0.4rem;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .header{
+        padding: 1.5rem 0;
+    }
+
+    .user{
+        display: none;
+    }
+
+    .burger-menu-open{
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        cursor: pointer;
+    }
+
+    .navbar{
+        display: none;
+    }
+
+    .burger-menu-open span{
+        text-transform: uppercase;
+    }
+
+    .burger-menu{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 100;
+    }
+
+    .burger-menu-window{
+        position: fixed;
+        top: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        width: 18.12rem;
+        padding:  0 1rem 0 2rem;
+        background-color: var(--primary-white);
+        z-index: 300;
+        gap: 5rem;
+    }
+
+    .burger-menu-top{
+        display: flex;
+        padding: 1.5rem 0;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .burger-menu-close{
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        cursor: pointer;
+    }
+
+    .burger-menu-close p{
+        text-transform: uppercase;
+    }
+
+    .burger-menu-nav ul{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .burger-menu-nav a{
+        text-transform: uppercase;
+        cursor: pointer;
+        padding: 0.75rem 0;
+    }
+}
+
+@media screen and (max-width: 576px){
+    .company{
+        display: none;
+    }
 }
