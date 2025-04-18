@@ -46,6 +46,7 @@
 .modal-product-id{
     top: 50%;
     transform: translateY(-50%);
+    font-size: 1rem;
 }
 
 .modal-image-container{
@@ -69,5 +70,16 @@
 .modal-close p{
     text-transform: uppercase;
     font-weight: 500;
+}
+
+@media screen and (max-width: 768px){
+    .modal-window{
+        padding: 1rem;
+        height: auto;
+    }
+
+    .modal-image-container img{
+        max-height: 22.75rem;
+    }
 }
 

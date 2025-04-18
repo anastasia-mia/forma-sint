@@ -7,25 +7,29 @@ const swiper = new Swiper(".swiper", {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
     },
+    spaceBetween: 20,
     breakpoints: {
         320: {
             slidesPerView: 1,
-            slidesPerGroup: 1
+            slidesPerGroup: 1,
+            spaceBetween: 0
+        },
+        567: {
+            slidesPerView: 2,
+            slidesPerGroup: 1,
+            spaceBetween: 10
         },
         768: {
-            slidesPerView: 2,
-            slidesPerGroup: 1
-        },
-        1024: {
             slidesPerView: 3,
-            slidesPerGroup: 1
+            slidesPerGroup: 1,
+            spaceBetween: 15
         },
         1280: {
             slidesPerView: 4,
-            slidesPerGroup: 1
+            slidesPerGroup: 1,
+            spaceBetween: 20
         }
     },
-    spaceBetween: 20,
     on: {
         init: async function () {
             try {
@@ -104,6 +108,7 @@ function updateProgressBar(swiper) {
 
 function addHeartToggleListener(){
     sliderWrapper.addEventListener("click", (event) => {
+        event.stopPropagation();
         const svgHeart = event.target.closest('svg');
         if (!svgHeart) return;
 
@@ -117,6 +122,9 @@ function addHeartToggleListener(){
 }
 
 sliderWrapper.addEventListener('click', (e) => {
+    const svgHeart = e.target.closest('svg');
+    if (svgHeart?.querySelector('use')?.getAttribute('href')?.includes('heart')) return;
+
     const productCard = e.target.closest('.product-card');
     const slide = e.target.closest('.swiper-slide');
     if (!productCard) return;

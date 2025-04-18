@@ -11,6 +11,20 @@ const loader = document.querySelector('.loader');
 const template = document.getElementById('product-template');
 const catalogBottom = document.querySelector('.catalog-bottom')
 
+const banner = document.createElement('div');
+banner.classList.add('catalog-banner');
+banner.innerHTML = `
+                    <div class="banner-content">
+                        <p class="logo-text">Forma’sint</p>
+                        <p class="banner-text">You'll look and feel like the champion.</p>
+                    </div>
+                    <button>Check this out
+                            <svg width="24" height="24" aria-hidden="true">
+                                <use href="assets/sprite.svg#arrow-down"></use>
+                            </svg>
+                    </button>
+            `
+
 
 select.addEventListener('change', (event) => {
     pageSize = event.target.value;
@@ -32,16 +46,12 @@ function loadProducts() {
         .then(data => {
             const fragment = document.createDocumentFragment();
 
-            const banner = document.createElement('div');
-            banner.classList.add('catalog-banner');
-            banner.innerHTML = `<img src="assets/BANNER.png" alt="banner"/>`
-
             data.forEach((item, index) => {
                 const clone = template.content.cloneNode(true);
                 clone.querySelector('.product-id').textContent = `ID: ${item.id}`;
                 clone.querySelector('img').src = item.image;
 
-                if(!bannerInserted && index === 5){
+                if(!bannerInserted && index === getBannerInsertIndex()){
                     fragment.appendChild(banner);
                     bannerInserted = true;
                 }
@@ -59,6 +69,13 @@ function loadProducts() {
             loading = false;
         })
 }
+
+const getBannerInsertIndex = () => {
+    const width = window.innerWidth;
+    if (width < 768) return 4;
+    if (width < 1024) return 6;
+    return 5;
+};
 
 const observer = new IntersectionObserver((entries) => {
     if(entries[0].isIntersecting && !loading){
