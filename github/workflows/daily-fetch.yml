@@ -22,7 +22,7 @@ jobs:
         run: npm install
 
       - name: Run fetchAllOrders
-        run: node services/fetchAllOrders.js
+        run: node server/services/fetchAllOrders.js
         env:
             BASE_URL: ${{ secrets.BASE_URL }}
             IDOSELL_API_KEY: ${{ secrets.IDOSELL_API_KEY }}
