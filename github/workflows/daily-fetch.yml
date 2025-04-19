@@ -1,0 +1,29 @@
+name: Update orders daily
+
+on:
+  schedule:
+    - cron: '0 4 * * *'
+  workflows_dispatch:
+
+jobs:
+  fetch-orders:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run fetchAllOrders
+        run: node services/fetchAllOrders.js
+        env:
+            BASE_URL: ${{ secrets.BASE_URL }}
+            IDOSELL_API_KEY: ${{ secrets.IDOSELL_API_KEY }}
+            MONGO_URI: ${{ secrets.MONGO_URI }}
