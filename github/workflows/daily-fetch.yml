@@ -3,7 +3,7 @@ name: Update orders daily
 on:
   schedule:
     - cron: '0 4 * * *'
-  workflows_dispatch:
+  workflow_dispatch:
 
 jobs:
   fetch-orders:
