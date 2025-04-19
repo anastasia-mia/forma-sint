@@ -5,12 +5,12 @@ const navBar = document.querySelector('.burger-menu-nav');
 const burgerMenuWindow = document.querySelector('.burger-menu-window');
 
 function closeBurgerMenu() {
-    burgerMenu.classList.remove('active');
+    burgerMenu.style.display = 'none';
     burgerMenuWindow.classList.remove('active');
 }
 
 menuOpen.addEventListener('click', () => {
-    burgerMenu.classList.add('active');
+    burgerMenu.style.display = 'block';
     burgerMenuWindow.classList.add('active');
 })
 
@@ -26,4 +26,4 @@ burgerMenu.addEventListener('click', (e) => {
     }
 });
 
-navBar.addEventListener('click', closeBurgerMenu);
+navBar.addEventListener('click', closeBurgerMenu)

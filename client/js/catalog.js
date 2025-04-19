@@ -23,8 +23,7 @@ banner.innerHTML = `
                                 <use href="assets/sprite.svg#arrow-down"></use>
                             </svg>
                     </button>
-            `
-
+            `;
 
 select.addEventListener('change', (event) => {
     pageSize = event.target.value;
@@ -71,10 +70,14 @@ function loadProducts() {
 }
 
 const getBannerInsertIndex = () => {
+    const bannerIndexDesktop = 5;
+    const bannerIndexTablet = 6;
+    const bannerIndexMobile = 4;
+
     const width = window.innerWidth;
-    if (width < 768) return 4;
-    if (width < 1024) return 6;
-    return 5;
+    if (width < 768) return bannerIndexMobile;
+    if (width < 1024) return bannerIndexTablet;
+    return bannerIndexDesktop;
 };
 
 const observer = new IntersectionObserver((entries) => {

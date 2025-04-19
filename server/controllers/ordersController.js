@@ -31,7 +31,6 @@ async function sendOrdersCsv(req, res, customFilter = {}) {
     }
 
     const filter = {...customFilter};
-    console.log(customFilter);
     if(minWorth) filter.orderWorth = {...filter.orderWorth, $gte: Number(minWorth)};
     if(maxWorth) filter.orderWorth = {...filter.orderWorth, $lte: Number(maxWorth)};
 

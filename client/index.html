@@ -23,14 +23,14 @@
     <div class="wrapper">
         <header class="header">
             <div class="header-container container">
-                <a href=".." class="logo">
+                <a href="./" class="logo">
                     <img src="assets/logo-light.svg" alt="FormaSint Logo">
                     <p class="logo-text">Forma’sint.</p>
                     <p class="company">idomods &lt;/&gt;</p>
                 </a>
                 <nav class="navbar" aria-label="Main navigation">
                     <ul>
-                        <li><a href=".." aria-current="page">Home</a></li>
+                        <li><a href="./" aria-current="page">Home</a></li>
                         <li><a href="#swiper-section">Featured products</a></li>
                         <li><a href="#catalog-section">Product Listing</a></li>
                     </ul>
@@ -116,7 +116,7 @@
             </div>
             <nav class="burger-menu-nav" aria-label="Burger menu navigation">
                 <ul>
-                    <li><a href="..">Home</a></li>
+                    <li><a href="./">Home</a></li>
                     <li><a href="#swiper-section">Featured products</a></li>
                     <li><a href="#catalog-section">Product Listing</a></li>
                 </ul>
@@ -129,8 +129,9 @@
             <div class="slide-container product-card">
                 <span class="slide-label"></span>
                 <img src="" alt="Product" loading="lazy" itemprop="image">
-                <svg width="24" height="24">
-                    <use href="assets/sprite.svg#heart"></use>
+                <svg width="24" height="24" aria-label="Add to favorites">
+                    <use href="assets/sprite.svg#heart" class="heart"></use>
+                    <use href="assets/sprite.svg#heart-filled" class="heart-filled"></use>
                 </svg>
             </div>
             <p class="product-title" itemprop="name"></p>
@@ -163,7 +164,7 @@
         </div>
     </div>
 
-    <script src="client/jsndex.js" type="module"></script>
+    <script src="js/index.js" type="module"></script>
     <script src="js/modal.js" type="module"></script>
     <script src="js/swiper.js" type="module"></script>
     <script src="js/catalog.js" type="module"></script>

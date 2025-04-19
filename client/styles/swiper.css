@@ -72,6 +72,22 @@
     z-index: 80;
 }
 
+.heart{
+    opacity: 1;
+}
+
+.heart-filled{
+    opacity: 0;
+}
+
+.swiper-slide svg:hover .heart{
+    opacity: 0;
+}
+
+.swiper-slide svg:hover .heart-filled{
+    opacity: 1;
+}
+
 .product-title{
     font-size: 1.25rem;
     font-weight: 600;
