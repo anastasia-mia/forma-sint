@@ -26,4 +26,24 @@ burgerMenu.addEventListener('click', (e) => {
     }
 });
 
-navBar.addEventListener('click', closeBurgerMenu);
+navBar.addEventListener('click', (event) => {
+    const target = event.target;
+    if (target.tagName === 'A' || target.closest('a')) {
+        closeBurgerMenu();
+    }
+});
+
+window.addEventListener('hashchange', () => {
+    const id = location.hash.slice(1);
+    const section = document.querySelector(`.${id}-name`);
+    if (section) {
+        section.classList.add('highlight');
+        setTimeout(() => {
+            section.classList.remove('highlight');
+        }, 700);
+    }
+});
+
+window.addEventListener('load', () => {
+    window.scrollTo(0, 0);
+});

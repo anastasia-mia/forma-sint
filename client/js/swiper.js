@@ -3,6 +3,7 @@ import {openProductModal} from "./modal.js";
 const sliderWrapper = document.querySelector(".swiper-wrapper");
 
 const swiper = new Swiper(".swiper", {
+    direction: 'horizontal',
     navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
@@ -29,6 +30,10 @@ const swiper = new Swiper(".swiper", {
             slidesPerGroup: 1,
             spaceBetween: 20
         }
+    },
+    scrollbar: {
+        el: '.swiper-scrollbar',
+        draggable: true,
     },
     on: {
         init: async function () {
@@ -65,14 +70,12 @@ const swiper = new Swiper(".swiper", {
                 swiper.update();
                 toggleNavButtons(this);
                 addHeartToggleListener();
-                updateProgressBar(this);
             } catch (error) {
                 console.log("Error getting data", error);
             }
         },
         slideChange: function () {
             toggleNavButtons(this);
-            updateProgressBar(this);
         }
     },
 });
@@ -88,22 +91,6 @@ function toggleNavButtons(swiper) {
         .classList.toggle('hidden', swiper.isBeginning);
     document.querySelector('.swiper-button-next')
         .classList.toggle('hidden', swiper.isEnd);
-}
-
-function updateProgressBar(swiper) {
-    const activeSlideIndex = swiper.activeIndex;
-    const spaceBetweenSlides = swiper.params.spaceBetween;
-    const swiperSlideSize = swiper.slides[activeSlideIndex].swiperSlideSize;
-    const slidesPerView = swiper.params.slidesPerView;
-    const groupIndex = Math.floor(activeSlideIndex);
-    const translateX = (swiperSlideSize + spaceBetweenSlides) * groupIndex;
-
-    const progressBar = document.querySelector('.swiper-progress-bar');
-    progressBar.style.width = swiperSlideSize + 'px';
-
-    if(activeSlideIndex < slidesPerView){
-        progressBar.style.transform = `translateX(${translateX}px)`;
-    }
 }
 
 function addHeartToggleListener(){

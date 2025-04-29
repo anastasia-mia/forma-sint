@@ -23,14 +23,15 @@
     <div class="wrapper">
         <header class="header">
             <div class="header-container container">
-                <a href="./" class="logo">
-                    <img src="assets/logo-light.svg" alt="FormaSint Logo">
+                <a href="#" class="logo">
+                    <img src="assets/logo-light.svg" class="logo-default" alt="FormaSint Logo">
+                    <img src="assets/logo-dark.svg" class="logo-hover" alt="FormaSint Logo Dark">
                     <p class="logo-text">Forma’sint.</p>
                     <p class="company">idomods &lt;/&gt;</p>
                 </a>
                 <nav class="navbar" aria-label="Main navigation">
                     <ul>
-                        <li><a href="./" aria-current="page">Home</a></li>
+                        <li><a href="#" aria-current="page">Home</a></li>
                         <li><a href="#swiper-section">Featured products</a></li>
                         <li><a href="#catalog-section">Product Listing</a></li>
                     </ul>
@@ -74,13 +75,11 @@
                             </svg>
                         </div>
                     </div>
-                    <div class="swiper-progress">
-                        <div class="swiper-progress-bar"></div>
-                    </div>
+                    <div class="swiper-scrollbar"></div>
                 </section>
                 <section class="catalog" id="catalog-section">
                     <div class="catalog-options">
-                        <p>Numbers of products per page</p>
+                        <p class="catalog-section-name">Numbers of products per page</p>
                         <div class="catalog-select">
                             <select name="select" id="page-select" aria-label="Products per page">
                                 <option value="14">14</option>
@@ -116,7 +115,7 @@
             </div>
             <nav class="burger-menu-nav" aria-label="Burger menu navigation">
                 <ul>
-                    <li><a href="./">Home</a></li>
+                    <li><a href="#">Home</a></li>
                     <li><a href="#swiper-section">Featured products</a></li>
                     <li><a href="#catalog-section">Product Listing</a></li>
                 </ul>

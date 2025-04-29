@@ -16,10 +16,9 @@ h1{
 
 main{
     display: flex;
-    padding: 9.06rem 0;
+    margin: 9.06rem 0;
     flex-direction: column;
     gap: 6rem;
-    overflow: hidden;
 }
 
 .greeting-image img{
@@ -41,6 +40,11 @@ main{
     box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;
 }
 
+.highlight{
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    font-size: 0.9rem;
+}
+
 @media screen and (max-width: 1280px){
     .container{
         padding: 0 2rem;
@@ -53,7 +57,7 @@ main{
     }
 
     main{
-        padding: 8.4rem 0;
+        margin: 8.4rem 0;
         gap: 2.35rem;
     }
 

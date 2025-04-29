@@ -1,3 +1,9 @@
+.catalog{
+    position: relative;
+    padding-top: 6.25rem;
+    margin-top: -6.25rem;
+}
+
 .catalog-options {
     display: flex;
     align-items: center;
@@ -9,6 +15,7 @@
 .catalog-options p {
     text-transform: uppercase;
     font-weight: 500;
+    transition: all 0.3s ease-in-out;
 }
 
 .catalog-select {
