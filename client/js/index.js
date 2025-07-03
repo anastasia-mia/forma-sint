@@ -1,3 +1,5 @@
+import {Slider} from "./swiper.js";
+
 const menuOpen = document.querySelector('.burger-menu-open');
 const closeButton = document.querySelector('.burger-menu-close');
 const burgerMenu = document.querySelector('.burger-menu');
@@ -46,4 +48,12 @@ window.addEventListener('hashchange', () => {
 
 window.addEventListener('load', () => {
     window.scrollTo(0, 0);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    new Slider({
+        container: ".swiper",
+        endpoint: "https://brandstestowy.smallhost.pl/api/random",
+        templateId: "slide-template"
+    });
 });
