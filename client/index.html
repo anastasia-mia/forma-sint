@@ -55,7 +55,11 @@
                 <section class="greeting">
                     <h1>Forma'Sint</h1>
                     <div class="greeting-image">
-                        <img src="assets/HERO-PHOTO.webp" alt="Person on the iceberg">
+                        <img src="assets/HERO-PHOTO.webp"
+                             alt="Person on the iceberg"
+                             onload="this.nextElementSibling.style.display='none'"
+                        >
+                        <div class="hero-skeleton"></div>
                     </div>
                 </section>
                 <section class="swiper-section" id="swiper-section">
