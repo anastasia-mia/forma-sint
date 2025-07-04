@@ -2,6 +2,8 @@
 
 Fullstack test assignment for a fictional sportswear store **"Forma Sint"**.
 
+**Online demo:** https://anastasia-mia.github.io/forma-sint/client/
+
 ## Tech Stack
 
 ### Frontend:
