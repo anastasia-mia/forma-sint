@@ -3,6 +3,14 @@ html{
     scroll-behavior: smooth;
 }
 
+body.lens-active {
+    cursor: none;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
 .container{
     max-width: 114.75rem;
     margin: 0 auto;
@@ -57,7 +65,7 @@ main{
     }
 
     main{
-        margin: 8.4rem 0;
+        margin: 7rem 0;
         gap: 2.35rem;
     }
 

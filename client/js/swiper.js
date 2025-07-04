@@ -19,7 +19,6 @@ export class Slider{
         this.removeSkeleton();
         this.initSwiper();
         this.setupSliderListener();
-        this.setupResizeThrottle();
     }
 
     showSkeleton(count = 4){
